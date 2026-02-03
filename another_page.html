@@ -11,6 +11,18 @@
   <script defer src='https://portalstage.catchpoint.com/jp/106154/latest/lastMileScript.js'></script>
   <!--script type="application/javascript" src="rprofiler.js"></script> -->
 <!-- The following code changes the beacon from unload/beforeunload to pageHide -->
+  <script>
+    // Initialize the queue
+    window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+    function cpRumTag() {
+      CPRUMDataLayer.push(arguments);
+    }
+
+    // Queue some events before the "real library" is loaded
+    
+  cpRumTag('consentv2', { analytics_storage: 'granted' })
+	cpRumTag('benchmarkLog',true);
+  </script>
 <script language="javascript" type="text/javascript">
 if (window.RProfiler) {
     window.RProfiler.usePageHide();
